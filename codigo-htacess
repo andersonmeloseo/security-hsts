@@ -1,0 +1,19 @@
+<IfModule mod_headers.c>
+  # X-Frame-Options
+  Header always append X-Frame-Options "SAMEORIGIN"
+  
+  # HSTS (HTTPS Strict Transport Security)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  
+  # X-Content-Type-Options (No Sniff)
+  Header set X-Content-Type-Options "nosniff"
+  
+  # XSS Protection
+  Header set X-XSS-Protection "1; mode=block"
+  
+  # Content-Security-Policy
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self';"
+  
+  # Referrer-Policy
+  Header set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
